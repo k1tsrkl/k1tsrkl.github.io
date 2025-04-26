@@ -8,7 +8,11 @@ var config = {
 	"芳龄16！",
         "如此强大！",
         "啊啊啊啊啊啊啊啊啊啊！",
-        "生日快乐！",
+	"祝科1特在新的一岁里！",
+	"心想事成！",
+	"要啥有啥！",
+	"运气爆棚！",
+        "最后生日快乐！",
     ],
     /**
      * imgs 可以不填, 但是如果要填写的话必须遵循下面的格式
@@ -26,12 +30,12 @@ var config = {
     // 按钮文字描述, 以下是默认的按钮文字，英文的，您可以改成你喜欢的文字
     desc: {
         turn_on: "开灯",
-        play: "开音乐",
-        bannar_coming: "颜色",
-        balloons_flying: "气球",
-        cake_fadein: "蛋糕",
-        light_candle: "蜡烛",
-        wish_message: "生日快乐",
-        story: "小作文",
+        play: "打开音响",
+        bannar_coming: "拉下神秘小绳",
+        balloons_flying: "按下神秘小按钮",
+        cake_fadein: "吃蛋糕！",
+        light_candle: "点蜡烛！",
+        wish_message: "生日快乐！",
+        story: "祝福！",
     }
 };
