@@ -165,33 +165,32 @@ $('document').ready(function(){
 	});
 	
 	$('#story').click(function(){
-		$(this).fadeOut('slow');
-		$('.cake').fadeOut('fast').promise().done(function(){
-			$('.message').fadeIn('slow');
-		});
-		
-		var i;
-
-		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
-			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-			if(i==50){
-				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-					$('.cake').fadeIn('fast');
-				});
-				
-			}
-			else{
-				msgLoop(i);
-			}			
-
-		});
-			// body...
-		}
-		
-		msgLoop(0);
-		
+	    // 停止当前音乐并切换新歌曲
+	    var audio = $('.song')[0];
+	    audio.pause();
+	    audio.src = 'new_song.mp3'; // 替换为你的新歌曲文件名
+	    audio.play();
+	    
+	    $(this).fadeOut('slow');
+	    $('.cake').fadeOut('fast').promise().done(function(){
+	        $('.message').fadeIn('slow');
+	    });
+	    
+	    var i;
+	    function msgLoop (i) {
+	        $("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
+	            i=i+1;
+	            $("p:nth-child("+i+")").fadeIn('slow').delay(1000);
+	            if(i==50){
+	                $("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+	                    $('.cake').fadeIn('fast');
+	                });
+	            } else {
+	                msgLoop(i);
+	            }
+	        });
+	    }
+	    msgLoop(0);
 	});
 });
 
