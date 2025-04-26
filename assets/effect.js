@@ -160,6 +160,7 @@ $('document').ready(function(){
 		$('.balloons h2').fadeIn(3000);
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#story').fadeIn('slow');
+			$('#final_chaos').fadeIn('slow'); // 新增：显示最终按钮
 		});
 	});
 	
@@ -198,3 +199,26 @@ $('document').ready(function(){
 
 
 //alert('hello');
+$('#final_chaos').click(function(){
+    // 1. 停止所有气球的缩放动画
+    $('#b11, #b22, #b33, #b44, #b55, #b66, #b77').css('animation', 'none');
+    
+    // 2. 为每个气球添加随机位置和旋转
+    $('#b11, #b22, #b33, #b44, #b55, #b66, #b77').each(function(){
+        const randomX = Math.random() * 80;
+        const randomY = Math.random() * 80;
+        const randomDuration = 2 + Math.random() * 3;
+        
+        $(this).addClass('chaos-animation').css({
+            'left': randomX + 'vw',
+            'top': randomY + 'vh',
+            'animation-duration': randomDuration + 's'
+        });
+    });
+    
+    // 3. 让气球边框旋转
+    $('.balloon-border').addClass('border-chaos');
+    
+    // 4. 禁用按钮
+    $(this).prop('disabled', true).text('Chaos Activated!');
+});
