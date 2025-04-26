@@ -114,6 +114,7 @@ body {
 
 
 .bulb {
+	z-index: -1;
 	width: 50px;
 	height: 50px;
 	margin: auto;
@@ -578,6 +579,7 @@ body {
 
 /*after music*/
 .bulb-glow-yellow-after {
+	opacity: 1 !important;
 	background-image: url('bulb_yellow.png');
 	-webkit-animation: bulb_glow_yellow_after linear 1s infinite;
 	-moz-animation: bulb_glow_yellow_after linear 1s infinite;

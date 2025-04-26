@@ -103,7 +103,7 @@ $('document').ready(function(){
 	}
 
 	$('#balloons_flying').click(function(){
-		$('.balloon-border').animate({top:-500},8000);
+		$('.balloon-border').stop(true, true).animate({top:-500},16000); // 清空队列并设置16秒动画
 		$('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
 		$('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
 		// $('#b3').addClass('balloons-rotate-behaviour-two');
@@ -118,8 +118,7 @@ $('document').ready(function(){
 		loopFive();
 		loopSix();
 		loopSeven();
-		
-		$(this).fadeOut('slow').delay(5000).promise().done(function(){
+		$(this).fadeOut('slow').delay(16000).promise().done(function(){ // 延迟同步为16秒
 			$('#cake_fadein').fadeIn('slow');
 		});
 	});	
